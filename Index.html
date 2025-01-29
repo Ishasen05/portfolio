@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PORTFOLIO</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/bcc77ea20b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="header">
+      <div class="navbar">
+        <nav>
+          <img src="Images/logo 1.png" class="logo" />
+
+          <ul id="sidemenu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#about">Skills</a></li>
+            <li><a href="#about">Experience</a></li>
+            <li><a href="#about">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+          </ul>
+
+          <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+      </div>
+      <div class="header-text">
+        <h1>Hi, I'm <span>Isha Sen</span></h1>
+        <h1>And I am an</h1>
+        <span id="element"></span>
+      </div>
+      <!--</div>-->
+    </div>
+    <!-- ---------about--------------------------------------------------------------------------------->
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="leftsection">
+            <img src="Images/isha.jpg" />
+          </div>
+          <div class="rightsection">
+            <h1 class="sub-title">About Me</h1>
+            <p>
+              I am Isha Sen, a passionate and dedicated 2nd-year student
+              currently pursuing a BSc. Honours in Computer Science from Guru
+              Ghasidas Vishwavidyalaya. With a keen interest in exploring
+              innovative technologies and solving complex problems, I aim to
+              leverage my skills to contribute meaningfully to the tech
+              industry.
+            </p>
+
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skills')">
+                Skills
+              </p>
+              <p class="tab-links" onclick="opentab('Experience')">
+                Experience
+              </p>
+              <p class="tab-links" onclick="opentab('Education')">Education</p>
+            </div>
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li>
+                  <span>Web Development</span><br />I work with HTML , CSS and
+                  Javascript for building user interfaces.
+                </li>
+                <li>
+                  <span>Graphic designing</span><br />I am proficient in using
+                  Canva to create visually appealing and engaging designs. My
+                  skills include designing presentations and posters.
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="Experience">
+              <ul>
+                <li>
+                  <span>2024 - Current</span><br />Web Development Team
+                  Executive in Google Developers Team On Campus
+                </li>
+                <li>
+                  <span>2024</span><br />Internship Manager in Bhujal Startup
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="Education">
+              <ul>
+                <li>
+                  <span>2023 - Current</span><br />BSc. Hons. CS from GGU
+                  Chhattisgarh
+                </li>
+                <li>
+                  <span>2024</span><br />Participated in hands-on learning
+                  sessions focuses on AI fundamentals.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- -------------------contact------------------------------------------->
+    <div id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="contact-left">
+            <h1 class="sub-title">Contact Me</h1>
+            <p><i class="fa-solid fa-paper-plane"></i>ishaasen25@gmail.com</p>
+            <p><i class="fa-solid fa-phone"></i>6268122841</p>
+            <div class="social-icons">
+              <a href="https://www.instagram.com/ishaaa_205/?hl=en"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="https://www.linkedin.com/in/isha-sen-b76604327/"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+              <a href="https://www.facebook.com/profile.php?id=61552393317509"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a href="https://x.com/SenIsha58234"
+                ><i class="fa-brands fa-x-twitter"></i
+              ></a>
+            </div>
+            <a href="Images/Resume new.pdf" download class="btn">
+              Download Resume
+            </a>
+          </div>
+
+          <div class="contact-right">
+            <form name="submit-to-google-sheet">
+              <input type="text" name="Name" placeholder="Your Name" required />
+              <input
+                type="text"
+                name="Email"
+                placeholder="Your Email"
+                required
+              />
+              <textarea
+                name="Message"
+                rows="6"
+                placeholder="Your Message"
+              ></textarea>
+              <button type="submit" class="btn">Submit</button>
+            </form>
+            <span id="msg"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">
+          <p>Copyright © Isha sen , 2025. All Rights Reserved.</p>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed("#element", {
+        strings: ["Undergraduate Student"],
+        typeSpeed: 50,
+      });
+    </script>
+
+    <script>
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+
+      function opentab(tabname) {
+        for (tablink of tablinks) {
+          tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      }
+    </script>
+
+    <script>
+      var sidemenu = document.getElementById("sidemenu");
+
+      function openmenu(){
+        sidemenu.style.right = "0" ;
+      }
+
+      function closemenu(){
+        sidemenu.style.right = "-200px" ;
+      }
+
+    </script>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyhD2Z2Q8bioLyXOUEXf3AejdmMSnyOZTPpe6jXsIYqiaGXmk1tsP6_JMen-pgApfwm/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById("msg")
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+          msg.innerHTML = "Message sent successfully"
+          setTimeout(function(){
+            msg.innerHTML = ""
+          }, 5000)
+          form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+  </body>
+</html>
